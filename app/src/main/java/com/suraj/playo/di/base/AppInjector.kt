@@ -7,14 +7,19 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.suraj.playo.NewsApp
+import com.suraj.playo.di.DaggerAppComponent.builder
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
 
 
+/**
+ * Helper class to automatically inject fragments if they implement [Injectable].
+ */
 object AppInjector {
 
     fun init(app: NewsApp) {
+        builder().application(app).build().inject(app)
         app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                 handleActivity(activity)
@@ -28,14 +33,14 @@ object AppInjector {
 
             override fun onActivityStopped(activity: Activity) {}
 
-            override fun onActivitySaveInstanceState(activity: Activity, outSate: Bundle) {}
+            override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
 
             override fun onActivityDestroyed(activity: Activity) {}
         })
     }
 
     private fun handleActivity(activity: Activity) {
-        if(activity is HasSupportFragmentInjector) {
+        if (activity is HasSupportFragmentInjector) {
             AndroidInjection.inject(activity)
         }
         (activity as? FragmentActivity)?.supportFragmentManager?.registerFragmentLifecycleCallbacks(
@@ -47,6 +52,5 @@ object AppInjector {
                 }
             }, true
         )
-
     }
 }
