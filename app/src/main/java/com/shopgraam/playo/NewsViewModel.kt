@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 class NewsViewModel @Inject constructor(
     private  val newsRepository: NewsRepository
-) : BaseViewModel<com.shopgraam.playo.Action, State>()  {
+) : BaseViewModel<Action, State>()  {
 
     override val initialState = State.Loading
 
@@ -30,7 +30,7 @@ class NewsViewModel @Inject constructor(
     }
 
     private fun bindAction () {
-        val loadNews = actions.ofType<com.shopgraam.playo.Action.LoadNews>()
+        val loadNews = actions.ofType<Action.LoadNews>()
             .switchMap {
                 newsRepository.getTopHeadlines("technology")
                     .subscribeOn(Schedulers.io())
