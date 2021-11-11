@@ -1,4 +1,4 @@
-package com.suraj.playo
+package com.suraj.playo.utils
 
 import android.view.LayoutInflater
 import android.view.View

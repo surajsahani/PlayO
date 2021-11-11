@@ -5,7 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_newspaper.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/drawable_list_item.xml" value="0.209375" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/empty_layout.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/empty_web_view.xml" value="0.19322916666666667" />

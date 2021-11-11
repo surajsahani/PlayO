@@ -8,12 +8,12 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.suraj.playo.domain.Article
 import com.suraj.playo.R
-import com.suraj.playo.inflate
+import com.suraj.playo.utils.inflate
 import kotlinx.android.synthetic.main.row_news_article.view.*
 
 class NewsArticlesAdapter(
     private val listener: (Article) -> Unit
-)  : RecyclerView.Adapter<NewsArticlesAdapter.NewsHolder>(){
+) : RecyclerView.Adapter<NewsArticlesAdapter.NewsHolder>() {
 
 
     private var newsArticles: List<Article> = emptyList()
@@ -28,10 +28,13 @@ class NewsArticlesAdapter(
 
     override fun getItemCount(): Int = newsArticles.size
 
-    class NewsHolder(itemView: View)  : RecyclerView.ViewHolder(itemView) {
+    class NewsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(newsArticle: Article, listener: (Article) -> Unit) = with(itemView) {
+            tvNewsItemTitle.text = newsArticle.title
+            tvNewsAuthor.text = newsArticle.author
 
+            tvListItemDateTime.text = newsArticle.publishedAt
 
             Glide.with(context)
                 .load(newsArticle.urlToImage)
@@ -46,6 +49,7 @@ class NewsArticlesAdapter(
 
         }
     }
+
     fun replaceItems(items: List<Article>) {
         newsArticles = items
         notifyDataSetChanged()

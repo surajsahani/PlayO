@@ -1,4 +1,4 @@
-package com.suraj.playo
+package com.suraj.playo.widget
 
 import android.content.Context
 import android.util.AttributeSet
@@ -11,6 +11,7 @@ import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.suraj.playo.R
 import com.suraj.playo.ui.newslist.State as UiState
 
 /**

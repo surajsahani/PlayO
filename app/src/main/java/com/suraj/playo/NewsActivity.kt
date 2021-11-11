@@ -5,11 +5,15 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.suraj.playo.adapter.NewsArticlesAdapter
 import com.suraj.playo.ui.base.BaseActivity
+import com.suraj.playo.ui.newslist.Action
 import com.suraj.playo.ui.newslist.NewsViewModel
 import com.suraj.playo.ui.newslist.State
 import com.suraj.playo.ui.newslist.WebViewActivity
 import com.suraj.playo.utils.getViewModel
+import com.suraj.playo.utils.toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.empty_layout.*
+import kotlinx.android.synthetic.main.progress_layout.*
 
 class NewsActivity : BaseActivity() {
 
@@ -31,9 +35,16 @@ class NewsActivity : BaseActivity() {
         setUpList()
 
 
+        newsViewModel.observableState.observe(this) {state ->
+            renderState(state)
+        }
+
+        newsViewModel.dispatch(Action.LoadNews)
     }
 
     private fun setUpList() {
+        newsList.setEmptyView(emptyView)
+        newsList.setProgressView(progressView)
 
         newsList.adapter = adapter
         newsList.layoutManager = LinearLayoutManager(this)
