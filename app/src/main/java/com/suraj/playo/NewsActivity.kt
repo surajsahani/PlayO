@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.suraj.playo.adapter.NewsArticlesAdapter
 import com.suraj.playo.ui.base.BaseActivity
 import com.suraj.playo.ui.newslist.NewsViewModel
+import com.suraj.playo.ui.newslist.State
 import com.suraj.playo.ui.newslist.WebViewActivity
 import com.suraj.playo.utils.getViewModel
 import kotlinx.android.synthetic.main.activity_main.*
