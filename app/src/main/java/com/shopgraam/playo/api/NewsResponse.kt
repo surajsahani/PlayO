@@ -1,4 +1,6 @@
-package com.shopgraam.playo
+package com.shopgraam.playo.api
+
+import com.shopgraam.playo.domain.Article
 
 data class NewsResponse(
     val status: String,

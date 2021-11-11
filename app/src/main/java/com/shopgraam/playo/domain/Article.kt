@@ -1,4 +1,4 @@
-package com.shopgraam.playo
+package com.shopgraam.playo.domain
 
 import javax.xml.transform.Source
 

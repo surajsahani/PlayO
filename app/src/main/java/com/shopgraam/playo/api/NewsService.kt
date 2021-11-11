@@ -1,4 +1,4 @@
-package com.shopgraam.playo
+package com.shopgraam.playo.api
 
 import io.reactivex.Observable
 import retrofit2.http.GET

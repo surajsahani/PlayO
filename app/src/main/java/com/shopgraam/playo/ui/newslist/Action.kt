@@ -1,10 +1,10 @@
-package com.shopgraam.playo
+package com.shopgraam.playo.ui.newslist
 
 import com.ww.roxie.BaseAction
 
 sealed class Action : BaseAction {
 
-    object LoadNews : Action () {
+    object LoadNews : Action() {
              override fun toString() = obfuscatedString()
         }
 }

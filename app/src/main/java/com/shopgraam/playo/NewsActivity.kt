@@ -3,11 +3,14 @@ package com.shopgraam.playo
 import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.shopgraam.playo.adapter.NewsArticlesAdapter
+import com.shopgraam.playo.di.ViewModelModule
+import com.shopgraam.playo.ui.newslist.WebViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class NewsActivity : BaseActivity() {
 
-    private val newsViewModel by lazy { getViewModel<NewsViewModel>()}
+    private val newsViewModel by lazy { getViewModel<ViewModelModule>()}
 
     private val adapter by lazy {
 

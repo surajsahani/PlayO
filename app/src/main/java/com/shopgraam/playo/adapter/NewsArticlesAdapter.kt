@@ -1,4 +1,4 @@
-package com.shopgraam.playo
+package com.shopgraam.playo.adapter
 
 import android.view.View
 import android.view.ViewGroup
@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.shopgraam.playo.domain.Article
+import com.shopgraam.playo.R
+import com.shopgraam.playo.inflate
 import kotlinx.android.synthetic.main.row_news_article.view.*
 
 class NewsArticlesAdapter(

@@ -1,4 +1,6 @@
-package com.shopgraam.playo
+package com.shopgraam.playo.ui.newslist
+
+import com.shopgraam.playo.domain.Article
 
 sealed class Change {
 

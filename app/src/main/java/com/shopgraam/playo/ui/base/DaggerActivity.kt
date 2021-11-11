@@ -1,4 +1,4 @@
-package com.shopgraam.playo
+package com.shopgraam.playo.ui.base
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

@@ -1,7 +1,9 @@
-package com.shopgraam.playo
+package com.shopgraam.playo.di
 
 import android.app.Application
 import com.shopgraam.playo.BuildConfig.BASE_URL
+import com.shopgraam.playo.BuildConfig.NEWS_API_KEY
+import com.shopgraam.playo.NewsApp
 import com.ww.roxie.BuildConfig
 import dagger.Module
 import dagger.Provides

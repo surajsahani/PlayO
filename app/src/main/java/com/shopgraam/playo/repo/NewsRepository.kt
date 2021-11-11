@@ -1,5 +1,6 @@
-package com.shopgraam.playo
+package com.shopgraam.playo.repo
 
+import com.shopgraam.playo.api.NewsService
 import javax.inject.Inject
 import javax.inject.Singleton
 
