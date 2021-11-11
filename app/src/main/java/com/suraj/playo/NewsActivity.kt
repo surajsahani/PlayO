@@ -38,14 +38,14 @@ class NewsActivity : BaseActivity() {
         newsList.layoutManager = LinearLayoutManager(this)
     }
 
-//    private fun renderState(state: State) {
-//        when (state) {
-//            is State.News
-//            -> adapter.replaceItems(state.news)
-//            is State.Loading,
-//            is State.Error
-//            -> newsList.showState(state)
-//        }
-//    }
+    private fun renderState(state: State) {
+        when (state) {
+            is State.News
+            -> adapter.replaceItems(state.news)
+            is State.Loading,
+            is State.Error
+            -> newsList.showState(state)
+        }
+    }
 
 }

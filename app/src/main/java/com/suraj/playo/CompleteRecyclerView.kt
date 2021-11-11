@@ -11,7 +11,12 @@ import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.suraj.playo.ui.newslist.State as UiState
 
+/**
+ * A custom implementation of [RecyclerView] to support
+ * Empty View & Loading animation.
+ */
 class CompleteRecyclerView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -89,19 +94,19 @@ class CompleteRecyclerView @JvmOverloads constructor(
         emptyImage?.setImageResource(mEmptyIconResId)
     }
 
-//    fun showState(state: UiState) {
-//        when (state) {
-//            is UiState.News,
-//            is UiState.Error -> {
-//                progressView?.isGone = true
-//                emptyView?.isVisible = true
-//            }
-//            is UiState.Loading -> {
-//                emptyView?.isGone = true
-//                progressView?.isVisible = true
-//            }
-//        }
-//    }
+    fun showState(state: UiState) {
+        when (state) {
+            is UiState.News,
+            is UiState.Error -> {
+                progressView?.isGone = true
+                emptyView?.isVisible = true
+            }
+            is UiState.Loading -> {
+                emptyView?.isGone = true
+                progressView?.isVisible = true
+            }
+        }
+    }
 
     override fun onMeasure(widthSpec: Int, heightSpec: Int) {
         super.onMeasure(widthSpec, heightSpec)
